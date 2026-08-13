@@ -27,7 +27,7 @@ export function CtaLink({
   className?: string;
 }) {
   return (
-    <Link to={to} className={cn(base, variants[variant], className)}>
+    <Link to={to as never} className={cn(base, variants[variant], className)}>
       {children}
     </Link>
   );

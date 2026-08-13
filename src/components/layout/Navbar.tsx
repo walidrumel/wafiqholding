@@ -63,7 +63,6 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className="-mr-2 inline-flex h-11 w-11 items-center justify-center text-foreground lg:hidden"
         >
-          {open ? <Menu className="hidden" /> : null}
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </Container>
@@ -84,12 +83,7 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <CtaLink
-              to="/contact"
-              variant="solid"
-              className="mt-6 w-full"
-              // close on navigate
-            >
+            <CtaLink to="/contact" variant="solid" className="mt-6 w-full">
               Contact Us
             </CtaLink>
           </Container>
