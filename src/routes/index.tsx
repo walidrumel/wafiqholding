@@ -44,9 +44,9 @@ function Index() {
           width={1920}
           height={1280}
           fetchPriority="high"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/25" />
         <Container className="flex min-h-[85vh] flex-col justify-center py-28 sm:py-36">
           <div className="max-w-3xl animate-fade-up">
             <p className="eyebrow text-gold">Build. Acquire. Invest. Grow.</p>
