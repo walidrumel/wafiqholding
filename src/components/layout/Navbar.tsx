@@ -5,6 +5,7 @@ import { CtaLink } from "@/components/site/CtaButton";
 import { Container } from "@/components/site/Section";
 import { futureNav, mainNav, site } from "@/data/site";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/wafiq-logo.png.asset.json";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,10 +32,15 @@ export function Navbar() {
       <Container className="flex h-18 items-center justify-between gap-6 py-4">
         <Link
           to="/"
-          className="font-display text-lg tracking-tight text-foreground sm:text-xl"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          aria-label={`${site.name} — home`}
         >
-          {site.name}
+          <img
+            src={logoAsset.url}
+            alt={`${site.name} logo`}
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
