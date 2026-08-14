@@ -10,6 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BusinessesRouteImport } from './routes/businesses'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InvestmentsRouteImport } from './routes/investments'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VisionRouteImport } from './routes/vision'
@@ -17,6 +21,26 @@ import { Route as VisionRouteImport } from './routes/vision'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessesRoute = BusinessesRouteImport.update({
+  id: '/businesses',
+  path: '/businesses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestmentsRoute = InvestmentsRouteImport.update({
+  id: '/investments',
+  path: '/investments',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -37,12 +61,20 @@ const VisionRoute = VisionRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/businesses': typeof BusinessesRoute
+  '/contact': typeof ContactRoute
+  '/investments': typeof InvestmentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/businesses': typeof BusinessesRoute
+  '/contact': typeof ContactRoute
+  '/investments': typeof InvestmentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
@@ -50,20 +82,53 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/businesses': typeof BusinessesRoute
+  '/contact': typeof ContactRoute
+  '/investments': typeof InvestmentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/vision': typeof VisionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/terms' | '/vision'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/businesses'
+    | '/contact'
+    | '/investments'
+    | '/privacy'
+    | '/terms'
+    | '/vision'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/terms' | '/vision'
-  id: '__root__' | '/' | '/privacy' | '/terms' | '/vision'
+  to:
+    | '/'
+    | '/about'
+    | '/businesses'
+    | '/contact'
+    | '/investments'
+    | '/privacy'
+    | '/terms'
+    | '/vision'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/businesses'
+    | '/contact'
+    | '/investments'
+    | '/privacy'
+    | '/terms'
+    | '/vision'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BusinessesRoute: typeof BusinessesRoute
+  ContactRoute: typeof ContactRoute
+  InvestmentsRoute: typeof InvestmentsRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   VisionRoute: typeof VisionRoute
@@ -76,6 +141,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/businesses': {
+      id: '/businesses'
+      path: '/businesses'
+      fullPath: '/businesses'
+      preLoaderRoute: typeof BusinessesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investments': {
+      id: '/investments'
+      path: '/investments'
+      fullPath: '/investments'
+      preLoaderRoute: typeof InvestmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -104,6 +197,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BusinessesRoute: BusinessesRoute,
+  ContactRoute: ContactRoute,
+  InvestmentsRoute: InvestmentsRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   VisionRoute: VisionRoute,
