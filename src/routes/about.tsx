@@ -75,11 +75,13 @@ function AboutPage() {
               disciplined capital allocation, and continuous improvement.
             </p>
           </div>
-          <figure className="sm:justify-self-end">
+          <figure className="w-full sm:flex sm:flex-col sm:items-end">
             <img
               src={portraitAsset.url}
               alt="Wafiq, founder of Wafiq Holdings"
-              loading="lazy"
+              width={320}
+              height={400}
+              loading="eager"
               className="aspect-[4/5] w-full max-w-xs rounded-sm object-cover shadow-sm"
             />
             <figcaption className="mt-3 text-xs tracking-wide text-muted-foreground">
