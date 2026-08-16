@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Container } from "@/components/site/Section";
 import { futureNav, mainNav, site } from "@/data/site";
+import logoAsset from "@/assets/wafiq-logo.png.asset.json";
 
 export function Footer() {
   const links = [...mainNav, ...futureNav.filter((l) => l.enabled)];
@@ -10,7 +11,13 @@ export function Footer() {
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr]">
           <div className="max-w-sm">
-            <p className="font-display text-xl">{site.name}</p>
+            <div className="inline-flex rounded-md bg-navy-foreground/95 px-5 py-4">
+              <img
+                src={logoAsset.url}
+                alt={`${site.name} logo`}
+                className="h-12 w-auto"
+              />
+            </div>
             <p className="mt-4 text-sm leading-relaxed text-navy-foreground/65">
               Building businesses. Investing for the long term.
             </p>

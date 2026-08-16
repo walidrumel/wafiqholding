@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CtaLink } from "@/components/site/CtaButton";
 import { Reveal } from "@/components/site/Reveal";
 import { Section, SectionHeading } from "@/components/site/Section";
+import portraitAsset from "@/assets/wafiq-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -62,7 +63,8 @@ function AboutPage() {
   return (
     <>
       <Section className="pb-10">
-        <div className="max-w-3xl">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.6fr_1fr]">
+          <div className="max-w-3xl">
           <p className="eyebrow">About</p>
           <h1 className="mt-6 text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
             About Wafiq Holdings
@@ -72,6 +74,18 @@ function AboutPage() {
             investing in businesses. Our approach is centered on long-term ownership,
             disciplined capital allocation, and continuous improvement.
           </p>
+          </div>
+          <figure className="order-first lg:order-none lg:justify-self-end">
+            <img
+              src={portraitAsset.url}
+              alt="Wafiq, founder of Wafiq Holdings"
+              loading="lazy"
+              className="aspect-[4/5] w-full max-w-xs rounded-sm object-cover shadow-sm"
+            />
+            <figcaption className="mt-3 text-xs tracking-wide text-muted-foreground">
+              Wafiq
+            </figcaption>
+          </figure>
         </div>
       </Section>
 
